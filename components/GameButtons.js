@@ -34,7 +34,7 @@ class DealerHand extends Component {
 
 const mapStateToProps = ({ blackjack }) => {
   const { playerCards, dealerCards, deck } = blackjack;
-  console.log('GameButton', dealerCards);
+  console.log('GameButton mapStateToProps', dealerCards);
   return { playerCards, dealerCards, deck };
 };
 
