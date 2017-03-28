@@ -1,5 +1,4 @@
 import {
-  GET_NEW_CARD,
   GET_NEW_PLAYER_CARD,
   INITIALIZE_BLACKJACK_GAME,
   INITIALIZE_DECK,
@@ -46,22 +45,13 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, gameStatus: 'play', turn: 'player', deck, playerCards, dealerCards };
     }
 
-    case GET_NEW_CARD: {
-      const deck = state.deck;
-      const card = deck.pop();
-      const playerCards = state.playerCards;
-      playerCards.push(card);
-      console.log('GNC: ', playerCards);
-      return { ...state, deck, playerCards };
-    }
-
     case GET_NEW_PLAYER_CARD: {
       const deck = state.deck;
       const card = deck.pop();
       const playerCards = state.playerCards;
       playerCards.push(card);
-      console.log('GNC: ', playerCards);
-      return { ...state, deck, playerCards };  
+      console.log('GNPC Reducer: ', playerCards);
+      return { ...state, deck, playerCards };
     }
 
     case UPDATE_DEALER_TOTAL:

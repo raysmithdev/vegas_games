@@ -3,12 +3,12 @@
 // export const START_NEW_ROUND = 'START_NEW_ROUND';
 // export const UPDATE_DEALER_TOTAL = 'UPDATE_DEALER_TOTAL';
 // export const UPDATE_GAME_STATUS = 'UPDATE_GAME_STATUS';
+// export const GET_NEW_CARD = 'GET_NEW_CARD';
 
 /***************************************************
   General Game Action Types
 ***************************************************/
 export const INITIALIZE_DECK = 'INITIALIZE_DECK';
-export const GET_NEW_CARD = 'GET_NEW_CARD';
 
 /**************************************************
     BlackJack

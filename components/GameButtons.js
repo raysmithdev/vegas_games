@@ -14,6 +14,8 @@ class DealerHand extends Component {
   }
 
   hitPlayer() {
+    // this.props.dispatch(getNewPlayerCard());   // this.props.dispatch() doesn't work
+    // getNewPlayerCard is in GameActions
     this.props.getNewPlayerCard();
   }
 
@@ -31,5 +33,5 @@ class DealerHand extends Component {
 }
 
 export default connect(null, {
-  getNewPlayerCard
+  getNewPlayerCard,
 })(DealerHand);
