@@ -17,6 +17,12 @@ export const startBlackjackGame = (deck, playerCards, dealerCards) => ({
   dealerCards
 });
 
+export const getNewPlayerCard = (playerCards, deck) => ({
+  type: GET_NEW_PLAYER_CARD,
+  playerCards,
+  deck
+});
+
 export const updatePlayerTotal = (playerTotal) => ({
   type: UPDATE_PLAYER_TOTAL,
   payload: playerTotal
@@ -25,14 +31,4 @@ export const updatePlayerTotal = (playerTotal) => ({
 export const updateDealerTotal = (dealerTotal) => ({
   type: UPDATE_DEALER_TOTAL,
   payload: dealerTotal
-});
-
-// export const getNewPlayerCard = () => ({
-//   type: GET_NEW_PLAYER_CARD
-// });
-
-export const getNewPlayerCard = (newPlayerCards, newDeck) => ({
-  type: GET_NEW_PLAYER_CARD,
-  newPlayerCards,
-  newDeck
 });

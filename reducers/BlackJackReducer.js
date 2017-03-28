@@ -52,8 +52,9 @@ export default (state = INITIAL_STATE, action) => {
     // }
 
     case GET_NEW_PLAYER_CARD: {
-      console.log('GET_NEW_PLAYER_CARD', action.newPlayerCards);
-      return { ...state, deck: action.newDeck, playerCards: action.newPlayerCards };
+      const { deck, playerCards } = action;
+      console.log('GET_NEW_PLAYER_CARD', playerCards);
+      return { ...state, deck, playerCards };
     }
 
     case UPDATE_DEALER_TOTAL:

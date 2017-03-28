@@ -43,7 +43,7 @@ class PlayerHand extends Component {
   }
 
   render() {
-    console.log('PlayerHand render', this.props.playerCards);
+    // console.log('PlayerHand render', this.props.playerCards);
     return (
       <View style={styles.viewStyle}>
         {this.renderPlayerTotal()}

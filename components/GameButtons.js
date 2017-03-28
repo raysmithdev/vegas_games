@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { ListView, Text, View } from 'react-native';
 import { Button, Card, CardSection, Header } from './common';
 
-import {
-  getNewPlayerCard,
-} from '../actions';
+import * as actions from '../actions';
 
 class DealerHand extends Component {
   constructor() {
@@ -14,11 +12,11 @@ class DealerHand extends Component {
   }
 
   hitPlayer() {
-    const newDeck = this.props.deck;
-    const newCard = newDeck.pop();
-    const newPlayerCards = this.props.playerCards;
-    newPlayerCards.push(newCard);
-    this.props.getNewPlayerCard(newPlayerCards, newDeck);
+    const deck = this.props.deck;
+    const card = deck.pop();
+    const playerCards = this.props.playerCards;
+    playerCards.push(card);
+    this.props.getNewPlayerCard(playerCards, deck);
   }
 
 
@@ -36,9 +34,8 @@ class DealerHand extends Component {
 
 const mapStateToProps = ({ blackjack }) => {
   const { playerCards, dealerCards, deck } = blackjack;
+  console.log('GameButton', dealerCards);
   return { playerCards, dealerCards, deck };
 };
 
-export default connect(mapStateToProps, {
-  getNewPlayerCard,
-})(DealerHand);
+export default connect(mapStateToProps, actions)(DealerHand);
