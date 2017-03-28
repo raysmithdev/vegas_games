@@ -20,8 +20,8 @@ const RouterComponent = () => {
       leftButtonTextStyle={{ color: '#ffca63' }}
       sceneStyle={{ paddingTop: Platform.OS === 'ios' ? 64 : 74 }}
     >
-      <Scene key="home" component={Home} title="Card Games" />
-      <Scene initial key="playBlackJack" component={PlayBlackJack} title="Blackjack" leftTitle='Home' onLeft={() => Actions.home({ type: 'reset' })} />
+      <Scene initial key="home" component={Home} title="Card Games" />
+      <Scene key="playBlackJack" component={PlayBlackJack} title="Blackjack" leftTitle='Home' onLeft={() => Actions.home({ type: 'reset' })} />
     </Router>
   );
 };

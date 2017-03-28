@@ -3,8 +3,13 @@ import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import { Text } from 'react-native';
 import { Button, Card, CardSection, } from './common';
+import * as actions from '../actions';
 
 class Home extends Component {
+
+  componentDidMount() {
+    this.props.initializeDeck();
+  }
 
   startBlackJack() {
     Actions.playBlackJack();
@@ -34,4 +39,4 @@ styles = {
 };
 
 
-export default Home;
+export default connect(null, actions)(Home);

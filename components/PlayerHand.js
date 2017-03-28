@@ -17,12 +17,12 @@ class PlayerHand extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('player CWRP', nextProps)
+    // console.log('PlayerHand CWRP', nextProps);
     this.createDataSource(nextProps);
   }
 
-
   createDataSource({ playerCards }) {
+    // console.log('PlayerHand dataSource', playerCards);
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     });
@@ -43,7 +43,7 @@ class PlayerHand extends Component {
   }
 
   render() {
-    console.log('Player render', this.props.playerCards);
+    console.log('PlayerHand render', this.props.playerCards);
     return (
       <View style={styles.viewStyle}>
         {this.renderPlayerTotal()}
@@ -71,7 +71,7 @@ const styles = {
 
 const mapStateToProps = ({ blackjack }) => {
   const { playerCards } = blackjack;
-  console.log('Player mapStateToProps', playerCards);
+  // console.log('PlayerHand mapStateToProps', playerCards);
   return { playerCards };
 };
 

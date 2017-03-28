@@ -35,7 +35,7 @@ class DealerHand extends Component {
   }
 
   render() {
-    console.log('Dealer render', this.props.dealerCards);
+    // console.log('Dealer render', this.props.dealerCards);
     return (
       <View style={styles.viewStyle}>
         {this.renderDealerTotal()}

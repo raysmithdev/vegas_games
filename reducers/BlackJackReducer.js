@@ -35,23 +35,25 @@ export default (state = INITIAL_STATE, action) => {
     }
 
     case START_BLACKJACK_GAME: {
-      const deck = state.deck;
-      const playerCards = [];
-      const dealerCards = [];
-      playerCards.push(deck.pop());
-      playerCards.push(deck.pop());
-      dealerCards.push(deck.pop());
-      dealerCards.push(deck.pop());
-      return { ...state, gameStatus: 'play', turn: 'player', deck, playerCards, dealerCards };
+      const { deck, playerCards, dealerCards } = action;
+      console.log('START_BLACKJACK_GAME', playerCards);
+      return { ...state, deck, playerCards, dealerCards };
     }
 
+    // case START_BLACKJACK_GAME: {
+    //   const deck = state.deck;
+    //   const playerCards = [];
+    //   const dealerCards = [];
+    //   playerCards.push(deck.pop());
+    //   playerCards.push(deck.pop());
+    //   dealerCards.push(deck.pop());
+    //   dealerCards.push(deck.pop());
+    //   return { ...state, gameStatus: 'play', turn: 'player', deck, playerCards, dealerCards };
+    // }
+
     case GET_NEW_PLAYER_CARD: {
-      const deck = state.deck;
-      const card = deck.pop();
-      const playerCards = state.playerCards;
-      playerCards.push(card);
-      console.log('GNPC Reducer: ', playerCards);
-      return { ...state, deck, playerCards };
+      console.log('GET_NEW_PLAYER_CARD', action.newPlayerCards);
+      return { ...state, deck: action.newDeck, playerCards: action.newPlayerCards };
     }
 
     case UPDATE_DEALER_TOTAL:

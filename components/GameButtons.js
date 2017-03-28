@@ -14,9 +14,11 @@ class DealerHand extends Component {
   }
 
   hitPlayer() {
-    // this.props.dispatch(getNewPlayerCard());   // this.props.dispatch() doesn't work
-    // getNewPlayerCard is in GameActions
-    this.props.getNewPlayerCard();
+    const newDeck = this.props.deck;
+    const newCard = newDeck.pop();
+    const newPlayerCards = this.props.playerCards;
+    newPlayerCards.push(newCard);
+    this.props.getNewPlayerCard(newPlayerCards, newDeck);
   }
 
 
@@ -32,6 +34,11 @@ class DealerHand extends Component {
   }
 }
 
-export default connect(null, {
+const mapStateToProps = ({ blackjack }) => {
+  const { playerCards, dealerCards, deck } = blackjack;
+  return { playerCards, dealerCards, deck };
+};
+
+export default connect(mapStateToProps, {
   getNewPlayerCard,
 })(DealerHand);

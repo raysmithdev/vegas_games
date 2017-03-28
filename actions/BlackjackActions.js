@@ -10,8 +10,11 @@ export const initializeBlackjackGame = () => ({
   type: INITIALIZE_BLACKJACK_GAME
 });
 
-export const startBlackjackGame = () => ({
-  type: START_BLACKJACK_GAME
+export const startBlackjackGame = (deck, playerCards, dealerCards) => ({
+  type: START_BLACKJACK_GAME,
+  deck,
+  playerCards,
+  dealerCards
 });
 
 export const updatePlayerTotal = (playerTotal) => ({
@@ -24,6 +27,12 @@ export const updateDealerTotal = (dealerTotal) => ({
   payload: dealerTotal
 });
 
-export const getNewPlayerCard = () => ({
-  type: GET_NEW_PLAYER_CARD
+// export const getNewPlayerCard = () => ({
+//   type: GET_NEW_PLAYER_CARD
+// });
+
+export const getNewPlayerCard = (newPlayerCards, newDeck) => ({
+  type: GET_NEW_PLAYER_CARD,
+  newPlayerCards,
+  newDeck
 });

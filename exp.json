@@ -1,6 +1,6 @@
 {
   "name": "blackjack",
-  "description": "An empty new project",
+  "description": "Vegas-style Card Games",
   "slug": "blackjack",
   "privacy": "public",
   "sdkVersion": "15.0.0",
